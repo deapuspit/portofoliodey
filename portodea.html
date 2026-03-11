@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio-bydeapstri</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e293b; /* Tailwind slate-800 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #3b82f6; /* Tailwind blue-500 */
+      border-radius: 10px;
+      border: 2px solid #1e293b;
+    }
+
+    /* Navigation active underline transition */
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after, nav a.active::after {
+      width: 100%;
+    }
+
+    /* Section entry animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 font-sans leading-relaxed scroll-smooth selection:bg-blue-500 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <header class="fixed w-full bg-slate-900 bg-opacity-80 backdrop-blur-md z-50 border-b border-slate-700">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-5 md:px-0">
+      <div class="flex items-center space-x-2">
+  <span class="text-blue-500 text-xl font-bold">&lt;/&gt;</span>
+  <a href="#home" class="text-xl font-bold text-blue-500 select-none">DEA PUSPITASARI</a>
+</div>
+
+      <ul class="hidden md:flex space-x-8 text-sm font-medium">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Portofolio</a></li>
+        <li><a href="#certificate" class="nav-link">Certificate</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button id="nav-toggle" aria-label="Toggle navigation menu" class="md:hidden focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-700">
+      <ul class="flex flex-col space-y-2 p-4 text-center text-blue-400 font-semibold">
+        <li><a href="#home" class="nav-link-mobile block py-2">Beranda</a></li>
+        <li><a href="#about" class="nav-link-mobile block py-2">About</a></li>
+        <li><a href="#portfolio" class="nav-link-mobile block py-2">Portofolio</a></li>
+        <li><a href="#certificate" class="nav-link-mobile block py-2">Certificate</a></li>
+        <li><a href="#contact" class="nav-link-mobile block py-2">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-5 md:px-20 pt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="text-white max-w-xl px-4 py-10">
+  <h1 class="text-3xl md:text-4xl font-bold leading-tight">
+    Hello! I'm Dea, a passionate student currently pursuing a degree in Information Systems at Universitas Kuningan.
+  </h1>
+  <p class="mt-4 text-base md:text-lg text-slate-300 leading-relaxed">
+    Masih belajar, masih berproses, tapi selalu penasaran dengan dunia coding. Web Development jadi titik awal saya masuk ke dunia teknologi — dan saya siap tumbuh dari sini.
+  </p>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <div class="mt-6 flex space-x-4 text-white text-2xl">
+  <a href="https://x.com/AjaaaDea?t=P0aPGHYIo8Ayb4VjsdR-uQ&s=09" target="_blank" class="hover:text-blue-400">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/dea-puspitasari-403b41313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="hover:text-blue-500">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://github.com/deapuspit" target="_blank" class="hover:text-gray-300">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+</div>
+  <div class="relative w-56 h-56 mx-auto md:mx-0">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-slate-800 rounded-full blur-2xl opacity-30 z-0"></div>
+
+  <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp_Image_2025-07-13_at_17.59.06-removebg-preview.png"
+       alt="Dea Puspitasari"
+       class="relative z-10 w-full h-full object-cover rounded-full shadow-xl ring-2 ring-blue-500" />
+</div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="min-h-screen container mx-auto px-5 md:px-0 py-20 fade-in" style="animation-delay: 0.6s;">
+    <h2 class="text-4xl font-bold text-blue-500 mb-6 text-center md:text-left">About Me</h2>
+    <div class="max-w-4xl mx-auto md:flex md:items-center md:space-x-16">
+      <div class="mb-8 md:mb-0 md:flex-1">
+       <img 
+  src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 19.19.22.jpeg"  
+  alt="Dea Puspitasari"
+  class="w-60 h-auto object-cover rounded-lg shadow-md ring-2 ring-blue-500"
+/>
+
+
+      </div>
+      <div class="md:flex-1 text-slate-300 leading-relaxed text-base md:text-[17px]">
+        <p class="mb-4">Saya adalah mahasiswa Program Studi Sistem Informasi di Universitas Kuningan.
+        Saat ini saya sedang dalam proses belajar dan mengembangkan minat di bidang web development.</p>
+        <p class="mb-4">Meskipun masih pemula, saya memiliki ketertarikan yang besar terhadap dunia teknologi dan antusias untuk terus belajar, mencoba, dan berkembang.</p>
+        <p>Bagi saya, setiap proses adalah langkah menuju pemahaman yang lebih baik, dan saya percaya bahwa dengan konsistensi, saya bisa tumbuh menjadi pribadi yang lebih siap menghadapi tantangan di dunia teknologi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 px-5 md:px-0 bg-slate-900 text-white">
+  <div class="container mx-auto max-w-5xl">
+    <h2 class="text-4xl font-bold text-blue-400 mb-12 text-center">Portfolio</h2>
+
+    <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg md:flex">
+      <!-- Gambar Project -->
+      <div class="md:w-1/2">
+        <img 
+          src="c:\Users\WINDOWS 10\Pictures\Screenshots\Screenshot 2025-07-13 194734.png" 
+          alt="Aplikasi Kasir CI4" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Deskripsi Project -->
+      <div class="p-8 md:w-1/2">
+        <h3 class="text-2xl font-semibold text-blue-400 mb-2">Aplikasi Kasir</h3>
+        <p class="text-slate-300 mb-4 text-base leading-relaxed">
+          Aplikasi kasir berbasis web yang saya kembangkan menggunakan framework CodeIgniter 4 sebagai bagian dari Uji Kompetensi Keahlian (UKK) saat saya menempuh pendidikan di SMKN 2 Kuningan, jurusan Rekayasa Perangkat Lunak.
+        </p>
+        <p class="text-sm text-slate-400 mb-2">Tools: CodeIgniter 4, PHP, MySQL, Bootstrap</p>
+
+        <!-- Tombol -->
+        <div class="mt-4">
+          <a href="c:\Users\WINDOWS 10\Pictures\Screenshots\Screenshot 2025-07-13 194734.png" class="text-blue-400 hover:underline text-sm">View Screenshot / Detail →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Certificate Section -->
+<section id="certificate" class="bg-[#0f172a] text-white py-12 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Certificate</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Sertifikat 1 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.25.58.jpeg" alt="Sertifikat Python" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Memulai Pemrograman Dengan Python</h3>
+          <a href="https://www.dicoding.com/certificates/L4PQEYNOQPO1" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- Sertifikat 2 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.46.31.jpeg" alt="Sertifikat" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Belajar Dasar Visualisasi Data</h3>
+          <a href="https://www.dicoding.com/certificates/2VX3KLWN3XYQ" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- Sertifikat 3 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.47.57.jpeg" alt="Sertifikat" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Belajar Dasar Structured Query Language</h3>
+          <a href="https://www.dicoding.com/certificates/RVZKW7184ZD5" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- Sertifikat 4 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.53.41.jpeg" alt="Sertifikat" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Belajar Dasar Data Science</h3>
+          <a href="https://www.dicoding.com/certificates/NVP75W0OWXR0" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- Sertifikat 5 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.54.31 (1).jpeg" alt="Sertifikat" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Belajar Dasar AI</h3>
+          <a href="https://www.dicoding.com/certificates/QLZ93N507Z5D" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+
+      <!-- Sertifikat 6 -->
+      <div class="bg-[#1e293b] rounded-lg shadow-md overflow-hidden text-sm">
+        <img src="c:\Users\WINDOWS 10\Downloads\WhatsApp Image 2025-07-13 at 20.56.41.jpeg" alt="Sertifikat" class="w-full h-32 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-400 mb-1">Belajar Dasar Cloud dan Gen AI di AWS</h3>
+          <a href="https://www.dicoding.com/certificates/0LZ0R7KONP65" class="text-blue-400 hover:underline text-xs">Lihat Detail →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-slate-800 py-20">
+    <div class="container mx-auto px-5 md:px-0 max-w-2xl">
+      <h2 class="text-4xl font-bold text-blue-400 mb-10 text-center">Contact Me</h2>
+      <form id="contact-form" class="bg-slate-900 rounded-lg p-8 shadow-lg" novalidate>
+        <div class="mb-6">
+          <label for="name" class="block mb-2 font-semibold text-slate-300">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required
+            class="w-full p-3 rounded-md bg-slate-700 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <p class="text-red-500 mt-1 hidden text-sm" id="name-error">Please enter your name</p>
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 font-semibold text-slate-300">Email</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required
+            class="w-full p-3 rounded-md bg-slate-700 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <p class="text-red-500 mt-1 hidden text-sm" id="email-error">Please enter a valid email address</p>
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block mb-2 font-semibold text-slate-300">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required
+            class="w-full p-3 rounded-md bg-slate-700 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <p class="text-red-500 mt-1 hidden text-sm" id="message-error">Please enter your message</p>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 transition text-white text-lg font-semibold py-3 rounded-md shadow-md focus:ring-4 focus:ring-blue-400">
+          Send Message
+        </button>
+        <p id="form-message" class="mt-4 text-center text-green-400 hidden font-semibold"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-700 py-6 text-center text-sm text-slate-500 select-none">
+    © 2024 DEAPSTSRI. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth scroll with active nav link highlight
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+    function setActiveLink(hash) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === hash);
+      });
+      mobileLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === hash);
+      });
+    }
+
+    // Intersection Observer for fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Click event for nav links (desktop & mobile)
+    function navClickHandler(e) {
+      e.preventDefault();
+      const hash = e.currentTarget.getAttribute('href');
+      const targetSection = document.querySelector(hash);
+      if (!targetSection) return;
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+
+      setActiveLink(hash);
+
+      // Close mobile menu on selection
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+    navLinks.forEach(link => link.addEventListener('click', navClickHandler));
+    mobileLinks.forEach(link => link.addEventListener('click', navClickHandler));
+
+    // Highlight nav link on scroll
+    const sections = ['#home', '#about', '#portfolio', '#certificate', '#contact'].map(id => document.querySelector(id));
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + (window.innerHeight / 3);
+      let current = '#home';
+      for (let section of sections) {
+        if (section.offsetTop <= scrollPos) {
+          current = '#' + section.id;
+        }
+      }
+      setActiveLink(current);
+    });
+
+    // Contact form validation & submission simulation
+    const form = document.getElementById('contact-form');
+    const nameInput = form.name;
+    const emailInput = form.email;
+    const messageInput = form.message;
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+    const formMessage = document.getElementById('form-message');
+
+    function validateEmail(email) {
+      // Simple email regex
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let valid = true;
+
+      if (!nameInput.value.trim()) {
+        nameError.classList.remove('hidden');
+        valid = false;
+      } else {
+        nameError.classList.add('hidden');
+      }
+
+      if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
+        emailError.classList.remove('hidden');
+        valid = false;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      if (!messageInput.value.trim()) {
+        messageError.classList.remove('hidden');
+        valid = false;
+      } else {
+        messageError.classList.add('hidden');
+      }
+
+      if (valid) {
+        // Simulate sending message
+        formMessage.textContent = "Thank you for reaching out! I'll get back to you soon.";
+        formMessage.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => formMessage.classList.add('hidden'), 8000);
+      } else {
+        formMessage.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
